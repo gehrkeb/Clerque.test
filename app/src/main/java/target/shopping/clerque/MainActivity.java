@@ -19,5 +19,9 @@ public class MainActivity extends Activity {
         ArrayList<String> items = new ArrayList<String>();
         items.add(0,"Dr. Pepper");
         items.add(1,"Mountain Dew");
+        items.add(2,"Pepsi");
+
     }
+
+
 }
