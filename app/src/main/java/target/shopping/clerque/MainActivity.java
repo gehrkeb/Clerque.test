@@ -5,14 +5,21 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+/** Target API Key: J5PsS2XGuqCnkdQq0Let6RSfvU7oyPwF
+ *  http://uhack.io/api/target/
+ */
 
 public class MainActivity extends Activity {
     private Button scan;
@@ -33,6 +40,14 @@ public class MainActivity extends Activity {
 
         StableArrayAdapter adapter = new StableArrayAdapter(this, android.R.layout.simple_list_item_1, items);
         lv.setAdapter(adapter);
+        // React to user clicks on item
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+             public void onItemClick(AdapterView<?> parentAdapter, View view, int position, long id) {
+                // We know the View is a TextView so we can cast it
+                TextView clickedView = (TextView) view;
+                Toast.makeText(MainActivity.this, "" + clickedView.getText() + "", Toast.LENGTH_SHORT).show();
+              }
+        });
     }
 
     private class StableArrayAdapter extends ArrayAdapter<String> {
@@ -54,6 +69,5 @@ public class MainActivity extends Activity {
         public boolean hasStableIds() {
             return true;
         }
-
     }
 }
