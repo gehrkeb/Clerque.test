@@ -34,13 +34,6 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true" />
 
-            <Button
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:text="Scan"
-                android:id="@+id/scan"
-                android:layout_gravity="center" />
-
         </FrameLayout>
 
         <TextView

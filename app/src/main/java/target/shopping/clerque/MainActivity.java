@@ -19,16 +19,19 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        scan = (Button)findViewById(R.id.scan);
+        setContentView(R.layout.activity_main);
+
+        //scan = (Button)findViewById(R.id.scan);
 //test
         ArrayList<String> items = new ArrayList<String>();
-        items.add(0,"Dr. Pepper");
-        items.add(1,"Mountain Dew");
-        items.add(2,"Pepsi");
-        items.add(3,"Coke");
+        items.add("Dr. Pepper");
+        items.add("Mountain Dew");
+        items.add("Pepsi");
+        items.add("Coke");
 
         ListView lv = (ListView)findViewById(R.id.productList);
-        StableArrayAdapter adapter = new StableArrayAdapter(this,android.R.layout.simple_list_item_1, items);
+
+        StableArrayAdapter adapter = new StableArrayAdapter(this, android.R.layout.simple_list_item_1, items);
         lv.setAdapter(adapter);
     }
 
