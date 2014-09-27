@@ -20,7 +20,7 @@ public class MainActivity extends Activity {
         items.add(0,"Dr. Pepper");
         items.add(1,"Mountain Dew");
         items.add(2,"Pepsi");
-
+        items.add(3,"Coke");
     }
 
 
